@@ -27,17 +27,9 @@ namespace assignment4.Models
                     + "; convert zero datetime = True";
             }
         }
-        /// <summary>
-        /// here, it returns a connection to the school database.
-        /// </summary>
-        /// <example>
-        /// private SchoolDbContext Blog = new SchoolDbContext();
-        /// MySqlConnection Conn = School.AccessDatabase();
-        /// </example>
-        /// <returns>A MySqlConnection Object</returns>
+
         public MySqlConnection AccessDatabase()
         {
-            //connection to blog database port : 3306, localhost;
 
             return new MySqlConnection(ConnectionString);
         }

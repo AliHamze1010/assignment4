@@ -17,16 +17,6 @@ namespace assignment4.Controllers
     {
         private SchoolDbContext School = new SchoolDbContext();
 
-        /// <summary>
-        ///here, it returns a list of teachers from the school database.
-        /// </summary>
-        /// <returns>
-        /// list of teachers with column names with their values respectively.
-        /// </returns>
-        /// <example>
-        /// GET API/TeacherData/ListTeachers ---> {teacher object....n(teacher object)...}
-        /// </example>
-        /// code below --
         [HttpGet]
         [Route("api/TeacherData/ListTeachers/{SearchKey?}")]
         public IEnumerable<Teacher> ListTeachers(string SearchKey = null)
@@ -65,17 +55,6 @@ namespace assignment4.Controllers
             return Teachers;
         }
 
-        ///<summary>
-        ///it findss a teacher from the database with the id. Non-Deterministic
-        ///</summary>
-        ///<param name="id">The Teacher Id
-        ///</param>
-        ///<returns>
-        /// teacher object having the details with same id
-        ///</returns>
-        ///<example>
-        ///api/TeacherData/FindTeachers/2
-        ///</example>
 
         [HttpGet]
         public Teacher FindTeacher(int id)
@@ -116,11 +95,6 @@ namespace assignment4.Controllers
             return NewTeacher;
         }
 
-        /// <summary>
-        /// Deletes a teacher from mysql database school. Non-Deterministic.
-        /// </summary>
-        /// <param name="id">The ID of the teacher.</param>
-        /// <example>POST /api/TeacherData/DeleteTeacher/2</example>
         [HttpPost]
         public void DeleteTeacher(int id)
         {
@@ -141,13 +115,6 @@ namespace assignment4.Controllers
 
         }
 
-        /// <summary>
-        /// Adds a teacher to the Database.
-        /// </summary>
-        /// <param name="NewTeacher"></param>
-        /// <example>
-        /// POST api/TeacherData/AddTeacher
-        /// </example>
         [HttpPost]
         [EnableCors(origins: "*", methods: "*", headers: "*")]
         public void AddTeacher([FromBody] Teacher NewTeacher)

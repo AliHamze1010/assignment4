@@ -4,5 +4,35 @@
     Layout = "New";
 }
 
-<h2>New</h2>
+
+
+
+<div id="containershow">
+    <nav>
+        <a class="navlink" href="/Teacher/List">Back To Teachers</a>
+    </nav>
+    <h2>New Teacher</h2>
+    <form method="POST" action="/Teacher/Create">
+        <div class="inputrow">
+            <label for="TeacherFname">First Name :</label>
+            <input type="text" id="TeacherFname" name="TeacherFname" />
+        </div>
+        <div class="inputrow">
+            <label for="TeacherLname">Last Name :</label>
+            <input type="text" id="TeacherLname" name="TeacherLname" />
+        </div>
+        <div class="inputrow">
+            <label for="TeacherEmployeeNumber">Employee Number:</label>
+            <input type="text" id="TeacherEmployeeNumber" name="TeacherEmployeeNumber" />
+        </div>
+        <div class="inputrow">
+            <label for="TeacherSalary">Salary :</label>
+            <input type="text" id="TeacherSalary" name="TeacherSalary" />
+        </div>
+        <div class="inputrow">
+            <input type="submit" value="Add Teacher" />
+        </div>
+    </form>
+</div>
+
 
