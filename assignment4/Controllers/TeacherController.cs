@@ -77,5 +77,29 @@ namespace assignment4.Controllers
 
             return RedirectToAction("List");
         }
+        public ActionResult Update(int id)
+        {
+            TeacherDataController controller = new TeacherDataController();
+            Teacher SelectedTeacher = controller.FindTeacher(id);
+
+            return View(SelectedTeacher);
+        }
+
+
+
+        [HttpPost]
+        public ActionResult Update(int id, string TeacherFname, string TeacherLname, string TeacherEmployeeNumber, decimal TeacherSalary)
+        {
+            Teacher TeacherInfo = new Teacher();
+            TeacherInfo.TeacherFname = TeacherFname;
+            TeacherInfo.TeacherLname = TeacherLname;
+            TeacherInfo.TeacherEmployeeNumber = TeacherEmployeeNumber;
+            TeacherInfo.TeacherSalary = TeacherSalary;
+
+            TeacherDataController controller = new TeacherDataController();
+            controller.UpdateTeacher(id, TeacherInfo);
+
+            return RedirectToAction("Show/" + id);
+        }
     }
 }
